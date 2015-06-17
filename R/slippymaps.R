@@ -43,8 +43,8 @@ bbox_tiles <- function(lon, lat, zoom = 10) {
   lon <- range(lon, na.rm = TRUE)
   lat <- range(lat, na.rm = TRUE)
 
-  br <- LonLat2XY(lon[1], lat[1], zoom)
-  tl <- LonLat2XY(lon[2], lat[2], zoom)
+  br <- lonlat2xy(lon[1], lat[1], zoom)
+  tl <- lonlat2xy(lon[2], lat[2], zoom)
 
   xs <- seq(br$X, tl$X)
   ys <- seq(br$Y, tl$Y)

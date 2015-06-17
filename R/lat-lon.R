@@ -1,19 +1,8 @@
 # Latitude/longitude conversions
 # Written by David Kahle
 
-LonLat2XY <- function(lon_deg, lat_deg, zoom, xpix=256, ypix=256){
-  n <- 2^zoom
-  X <- ((lon_deg + 180) / 360) * n
-  lat_rad <- lat_deg * pi/180
-  Y <- (1 - (log(tan(lat_rad) + sec(lat_rad)) / pi)) / 2 * n
-  df <- data.frame(
-    X = floor(X),
-    Y = floor(Y),
-    x = xpix*(X - floor(X)),
-    y = xpix*(Y - floor(Y))
-  )
-  row.names(df) <- NULL
-  df
+lonlat2xy <- function(lon, lat, zoom = 10) {
+  cbind(lon2x(lon, zoom), lat2y(lat, zoom))
 }
 
 lon2x <- function(lon, zoom) {
@@ -39,4 +28,4 @@ lat2y <- function(lat, zoom) {
 }
 
 
-sec <- function(x) 1/cos(x)
+sec <- function(x) 1 / cos(x)
