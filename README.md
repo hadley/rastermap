@@ -1,5 +1,7 @@
 # rastermap
 
+[![Travis-CI Build Status](https://travis-ci.org/hadley/rastermap.svg?branch=master)](https://travis-ci.org/hadley/rastermap)
+
 This package provides a simple API to retrieve a raster image (i.e. a matrix of RGB colours) from a map server.
 
 rastermap is not currently available on CRAN, please install with:
