@@ -9,3 +9,8 @@ Description: Aggregate raster map data into a single R "raster" for
   use in plots.
 License: GPL-3
 LazyData: true
+Imports:
+    digest,
+    httr,
+    jpeg,
+    png
